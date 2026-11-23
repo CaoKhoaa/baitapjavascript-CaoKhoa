@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi suất ngân hàng</title>
+</head>
+<body>
+    <h3>Tính lãi suất ngân hàng</h3>
+    Số tiền vay (triệu đồng): <input type="number" id="tien_vay"><br><br>
+    Lãi suất (%/năm): <input type="number" id="lai_suat"><br><br>
+    Số năm (n): <input type="number" id="so_nam"><br><br>
+    <button onclick="tinhTien()">Tính tiền phải trả</button>
+    <p id="ket_qua"></p>
+
+    <script>
+        function tinhTien() {
+        let tienVay = parseFloat(document.getElementById("tien_vay").value);
+        let laiSuat = parseFloat(document.getElementById("lai_suat").value);
+        let soNam = parseInt(document.getElementById("so_nam").value);
+        let tongTien = tienVay + soNam * (tienVay * laiSuat / 100);
+        document.getElementById("ket_qua").innerHTML = "Số tiền phải trả sau " + soNam + " năm là: " + tongTien + " (triệu đồng)";
+        }
+    </script>
+</body>
+</html>
